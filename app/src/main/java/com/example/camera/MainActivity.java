@@ -19,6 +19,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton male, female;
     private boolean maleFemale;
     private String name, address;
-    private Bitmap image;
+    public static Bitmap image;
     private int age;
 
     @Override
@@ -82,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent(MainActivity.this, DataActivity.class);
 
         male.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,10 +105,10 @@ public class MainActivity extends AppCompatActivity {
                 address = etAddress.getText().toString();
                 String selectedAge = spinner.getSelectedItem().toString();
                 age = Integer.parseInt(selectedAge);
+                Intent intent = new Intent(MainActivity.this, DataActivity.class);
                 intent.putExtra("NAME", name);
                 intent.putExtra("ADDRESS", address);
                 intent.putExtra("GENDER", maleFemale);
-                intent.putExtra("IMAGE", image);
                 intent.putExtra("AGE", age);
 
                 startActivity(intent);

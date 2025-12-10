@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton male, female;
     private boolean maleFemale;
     private String name, address;
-    public static Bitmap image;
+    private Bitmap image;
     private int age;
 
     @Override
@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("ADDRESS", address);
                 intent.putExtra("GENDER", maleFemale);
                 intent.putExtra("AGE", age);
+                intent.putExtra("IMAGE", image);
 
                 startActivity(intent);
                 finish();

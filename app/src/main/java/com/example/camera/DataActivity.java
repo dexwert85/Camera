@@ -1,6 +1,7 @@
 package com.example.camera;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,21 +33,20 @@ public class DataActivity extends AppCompatActivity {
         boolean maleFemale;
         String name, address;
         int age;
+        Bitmap image;
 
         name = get.getStringExtra("NAME");
         address = get.getStringExtra("ADDRESS");
         maleFemale = get.getBooleanExtra("GENDER", true);
         age = get.getIntExtra("AGE", 0);
+        image = get.getExtras().getParcelable("IMAGE");
 
         if (imageView != null) {
-            if (MainActivity.image != null) {
-                imageView.setImageBitmap(MainActivity.image);
+            if (image != null) {
+                imageView.setImageBitmap(image);
             } else {
                 imageView.setImageResource(R.drawable.ic_launcher_foreground);
             }
-        } else {
-            // Debug log
-            Toast.makeText(DataActivity.this, "sasas", Toast.LENGTH_SHORT).show();
         }
 
         String text = "";

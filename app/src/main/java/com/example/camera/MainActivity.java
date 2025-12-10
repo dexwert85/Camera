@@ -55,14 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.spinner);
 
-        // Create a list of ages 0–20
-        ArrayList<Object> ages = new ArrayList<>();
+        ArrayList<String> ages = new ArrayList<>();
         for (int i = 0; i <= 20; i++) {
             ages.add(String.valueOf(i));
         }
 
-// Create adapter
-        ArrayAdapter<Object> adapter = new ArrayAdapter<>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
                 ages

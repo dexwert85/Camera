@@ -39,7 +39,7 @@ public class DataActivity extends AppCompatActivity {
         address = get.getStringExtra("ADDRESS");
         maleFemale = get.getBooleanExtra("GENDER", true);
         age = get.getIntExtra("AGE", 0);
-        image = get.getExtras().getParcelable("IMAGE");
+        image = get.getParcelableExtra("IMAGE");
 
         if (imageView != null) {
             if (image != null) {
